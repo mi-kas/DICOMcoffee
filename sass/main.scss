@@ -1,0 +1,219 @@
+$base-color: #fff;
+$base-font: Helvetica Neue, Helvetica, Arial, sans-serif;
+
+// clearfix hack
+.clearfix {
+  zoom:1;
+  &:before, &:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+
+//viewer
+#viewer {
+  width: 100%;
+  height: 100%;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -ms-box-flex: 1;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: #000;
+}
+#viewerScreen {
+  display: table;
+}
+.viewerRows {
+  display: table-row;
+  &:last-child .viewerCells {
+    border-bottom: none;
+  }
+  .viewerCells:last-child {
+  border-right: none;
+  }
+}
+.viewerCells {
+  display: table-cell;
+  position: relative;
+  .viewerCells {
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+  }
+}
+
+canvas {
+  cursor: default;
+  display: block;
+}
+
+
+//patient infos
+%info {
+  color: $base-color;
+  font-size: 0.8em;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+.patientInfo {
+  @extend %info;
+  text-align: right;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+.studyInfo {
+  @extend %info;
+  text-align: left;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+
+//toolbox
+#toolbox {
+  margin-left: -1px;
+  padding: 10px;
+  margin-bottom: 0;
+  div{
+    float:left;
+  }
+}
+#toolboxHeader {
+  background-color: #fff;
+}
+#matrixViewSelectBoxItText {
+  padding-left:7px;
+}
+#singleButtons {
+  margin-left: 3px;
+}
+#slider {
+  width: 100%;
+  margin: 10px 0 0 0;
+  height: .6em;
+  .ui-slider-handle {
+    width: 1em;
+    height: 1em;
+  }
+}
+
+
+//meta-data dialog
+#metaDialog {
+  th, td {
+    overflow-y: scroll;
+    overflow-x: auto;
+    padding-left: 5px;
+    border-collapse: collapse;
+    border-right: 1px solid #333;
+  }
+  thead {
+    font-weight: bold;
+    border-bottom: 1px solid #333;
+  }
+  th:last-child, td:last-child {
+    border: none;
+  }
+}
+
+
+//side bar
+#sidebar {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 300px;
+  height: 100%;
+  border-right: 1px solid #ccc;
+}
+.input-append.customfile {
+  width: 100%;
+  white-space: normal;
+  .customfile-feedback {
+    border-radius: 3px 0 0 3px;
+    padding-left: 25px;
+    width: 167px;
+  }
+}
+.add-on.customfile-button {
+  width: 61px;
+}
+#inputContainer {
+  height: 60px;
+  width: 270px;
+}
+#progressBar {
+  margin-top: 5px;
+  height: .6em;
+}
+#errorMsg {
+  color: #f00;
+  font-size: 0.7em;
+  margin: 5px 0 5px 0;
+  p {
+    margin:2px 10px 0 10px;
+    padding: 0;
+  }
+  .ui-icon-alert {
+    float: left;
+    margin: .15em .3em .15em .3em;
+  }
+}
+
+
+//file tree
+#fileTree {
+  padding: 0px 10px;
+}
+.tree,.tree ul,.tree li {
+  list-style:none;
+  margin:0;
+  padding:0;
+  zoom: 1;
+}
+.tree ul {
+  margin-left:8px;
+}
+.tree li a {
+  color:#333;
+  padding:.1em 7px .1em 27px;
+  display:block;
+  text-decoration:none;
+  border:1px dashed #fff;
+  background:url(../img/icon-file.gif) 5px 50% no-repeat;
+}
+.tree li a.tree-parent {
+  background:url(../img/icon-folder-open.gif) 5px 50% no-repeat;
+}
+.tree li a.tree-parent-collapsed {
+  background:url(../img/icon-folder.gif) 5px 50% no-repeat;
+}
+.tree li a:hover,.tree li a.tree-parent:hover,.tree li a:focus,.tree li a.tree-parent:focus,.tree li a.tree-item-active {
+  border:1px solid #eee;
+  background-color:#fafafa;
+  -webkit-border-radius:4px;
+  -moz-border-radius:4px;
+  -ms-border-radius:4px;
+  border-radius:4px;
+}
+.tree li a:focus,.tree li a.tree-parent:focus,.tree li a.tree-item-active {
+  border:1px solid #e2f3fb;
+  background-color:#f2fafd;
+}
+.tree ul.tree-group-collapsed {
+  display:none;
+}
+
+
