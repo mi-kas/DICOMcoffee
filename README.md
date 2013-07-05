@@ -1,5 +1,5 @@
 # DICOMcoffee	
-Web-based DICOM viewer written in CoffeeScript and Sass. Rewrite of [https://github.com/mi-kas/webDICOM webDICOM].
+Web-based DICOM viewer written in CoffeeScript and Sass. Rewrite of [webDICOM](https://github.com/mi-kas/webDICOM).
 
 ##Visualization
 The visualisation of DICOM images is done with the HTML5 canvas element.
